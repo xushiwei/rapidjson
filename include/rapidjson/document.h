@@ -98,11 +98,11 @@ public:
 	//! Constructor for uint64_t value.
 	GenericValue(uint64_t u64) : flags_(kNumberUint64Flag) {
 		data_.n.u64 = u64;
-		if (!(u64 & 0x8000000000000000L))
+		if (!(u64 & 0x8000000000000000LL))
 			flags_ |= kInt64Flag;
-		if (!(u64 & 0xFFFFFFFF00000000L))
+		if (!(u64 & 0xFFFFFFFF00000000LL))
 			flags_ |= kUintFlag;
-		if (!(u64 & 0xFFFFFFFF80000000L))
+		if (!(u64 & 0xFFFFFFFF80000000LL))
 			flags_ |= kIntFlag;
 	}
 
